@@ -5,9 +5,9 @@ const Healthbar = () => {
   return (
     <div className="healthbar">
       <p class="Healthbar-label">
-        <span>10/10</span>
+        <span className="health_bar_levels">7/10</span>
       </p>
-      <div class="Healthbar-bar" style={{ width: "100%" }}></div>
+      <div class="Healthbar-bar" style={{ width: "70%" }}></div>
     </div>
   );
 };
