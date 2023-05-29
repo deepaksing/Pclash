@@ -282,3 +282,18 @@ body,* {
 .card_inside_description_title {
     font-weight: 700;
 }
+.player_healthbar {
+    position: absolute;
+    right: 5%;
+    top: 10%;
+    width: 20%;
+}
+
+
+.player_mana_info {
+    position: absolute;
+    bottom: 10%;
+    right: 5%;
+    width: 20%;
+}
+
