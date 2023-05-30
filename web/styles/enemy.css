@@ -1,0 +1,77 @@
+.enemy_details {
+    position: absolute;
+    top: 15%;
+    background-color: rgba(0, 0, 0, 0.658);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.3% 1%;
+}
+
+.enemy_profile {
+    color: white;
+}
+
+.enemy_name {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 1px hsla(0, 0%, 0%, 0.8);
+}
+
+.enemy_hero_name {
+    font-size: 14px;
+    letter-spacing: 1px;
+    color: rgb(206, 206, 206);
+    margin-top: 2%;
+}
+
+.enemy_play {
+    position: absolute;
+    left: 30%;
+    height: 100%;
+    width: 40%;
+}
+
+.enemy_playing_cards {
+    height: 30%;
+}
+
+.enemy_playing_details {
+    height: 70%;
+    display: flex;
+    position: relative;
+}
+
+.enemy_playing_hero {
+    width: 200px;
+    height: 80%;
+    margin-top: 5%;
+    background-color: grey;
+    margin-left: 30%;
+    border: 3px solid black;
+
+}
+
+.enemy_mana_health {
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
+
+.enemy_mana {
+    background-color: #326CB1;
+    padding: 5px 20px;
+    border-radius: 15px;
+}
+
+.mana_level_detail {
+    color: white;
+    font-weight: 600;
+}
+
+.enemy_healthbar {
+    position: absolute;
+    bottom: 70px;
+    width: 300px;
+}

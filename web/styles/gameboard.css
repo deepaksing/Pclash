@@ -1,0 +1,33 @@
+.game_element {
+    background-color: antiquewhite;
+    height: 50%;
+    position: relative;
+}
+
+.enemy_card_thrown {
+    height: 45%;
+    border-bottom: 2px dashed rgb(206, 165, 112);
+}
+
+.player_card_thrown {
+    height: 55%;
+}
+
+.game_info_bar {
+    position: absolute;
+    right: 1%;
+    top: 40%;
+    
+}
+.endTurn_game {
+    background-color: rgb(255, 196, 0);
+    padding: 14px 30px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 150ms all ease-in-out;
+}
+.endTurn_game:hover {
+    background-color: rgb(133, 203, 28);
+    transition: 150ms all ease-in-out;
+}
+
