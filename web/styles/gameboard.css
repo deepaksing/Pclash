@@ -11,14 +11,17 @@
 
 .player_card_thrown {
     height: 55%;
+    display: flex;
 }
-
+/* .board {
+    display: flex;
+} */
 .game_info_bar {
     position: absolute;
     right: 1%;
-    top: 40%;
-    
+    top: 40%;   
 }
+
 .endTurn_game {
     background-color: rgb(255, 196, 0);
     padding: 14px 30px;

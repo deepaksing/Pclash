@@ -1,4 +1,5 @@
 import cardsdetail from "@/content/cardsdetail";
+import { v4 as uuidv4 } from "uuid";
 
 export const CardTypes = {
   minion: "minion",
@@ -12,7 +13,7 @@ export const CardTargets = {
 
 export class Card {
   constructor(props) {
-    // this.id = uuid();
+    this.id = uuidv4();
     this.name = props.name;
     this.type = CardTypes[props.type];
     this.cost = props.cost;

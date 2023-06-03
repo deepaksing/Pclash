@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Healthbar from "./Healthbar";
 import "../../styles/player.css";
 import ManaBar from "./ManaBar";
 
-const Player = ({ state }) => {
+const Player = ({ hand, state }) => {
   return (
     <>
       <div className="player_details">
@@ -15,11 +15,11 @@ const Player = ({ state }) => {
 
       <div className="player_cards">
         <div className="cards">
-          {state !== null &&
-            state.hand[0].map((hand, index) => {
+          {hand &&
+            hand.map((hand, index) => {
               const cardClassname = `card card${index}`;
               return (
-                <div className={cardClassname}>
+                <div className={cardClassname} key={hand.id} data-id={hand.id}>
                   <div className="card_inside">
                     <div className="card_inside_charachter"></div>
                     <div className="card_inside_charname">{hand.name}</div>

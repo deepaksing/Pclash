@@ -75,3 +75,7 @@
     bottom: 70px;
     width: 300px;
 }
+
+.targethit {
+    border: 2px solid yellow;
+}
