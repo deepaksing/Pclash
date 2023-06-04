@@ -6,6 +6,12 @@ export const CardTypes = {
   spell: "spell",
 };
 
+export const CardPosition = {
+  hand: "hand",
+  board: "board",
+  enemy: "enemy",
+};
+
 export const CardTargets = {
   card: "card",
   hero: "hero",
@@ -22,6 +28,7 @@ export class Card {
     this.health = props.health;
     this.description = props.description;
     this.turn = props.turn;
+    this.position = CardPosition["hand"];
     // this.image = props.image;
   }
 }

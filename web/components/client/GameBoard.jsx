@@ -1,14 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/gameboard.css";
 
-const GameBoard = ({ turn }) => {
-  const [playerTurn, setPlayerTurn] = useState(true);
-
-  useEffect(() => {
-    if (turn && turn % 2) setPlayerTurn(true);
-    else if (turn && turn % 2 == 0) setPlayerTurn(false);
-    else setPlayerTurn(true);
-  }, [turn]);
+const GameBoard = ({ playerTurn, changeTurn }) => {
   return (
     <>
       <div className="game_element">
@@ -16,11 +9,23 @@ const GameBoard = ({ turn }) => {
         <div className="player_card_thrown board"></div>
         <div className="game_info_bar">
           {playerTurn ? (
-            <div className="endTurn_game" onClick={() => setPlayerTurn(false)}>
+            <div
+              className="endTurn_game"
+              onClick={() => {
+                changeTurn();
+              }}
+            >
               End turn
             </div>
           ) : (
-            <div className="enemyTurn_game">Enemy turn</div>
+            <div
+              className="enemyTurn_game"
+              onClick={() => {
+                changeTurn();
+              }}
+            >
+              Enemy turn
+            </div>
           )}
         </div>
       </div>

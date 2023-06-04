@@ -3,7 +3,7 @@ import Healthbar from "./Healthbar";
 import "../../styles/player.css";
 import ManaBar from "./ManaBar";
 
-const Player = ({ hand, state }) => {
+const Player = ({ hand, state, playerMana }) => {
   return (
     <>
       <div className="player_details">
@@ -17,7 +17,10 @@ const Player = ({ hand, state }) => {
         <div className="cards">
           {hand &&
             hand.map((hand, index) => {
-              const cardClassname = `card card${index}`;
+              let cardClassname = `card card${index}`;
+              // cardClassname = {state?.player.currentMana && hand.cost<=state?.player.currentMana};
+              if (state && hand.cost <= state.player.currentMana + 1)
+                cardClassname = `card card${index} highlightCard`;
               return (
                 <div className={cardClassname} key={hand.id} data-id={hand.id}>
                   <div className="card_inside">
@@ -50,7 +53,7 @@ const Player = ({ hand, state }) => {
       </div>
 
       <div className="player_mana_info">
-        <ManaBar state={state} />
+        <ManaBar mana={playerMana} />
       </div>
     </>
   );

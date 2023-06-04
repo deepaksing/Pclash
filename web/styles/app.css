@@ -1,6 +1,9 @@
 .app {
     width: 100%;
     height: 100%;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .welcome_page {
