@@ -12,10 +12,14 @@
 .player_card_thrown {
     height: 55%;
     display: flex;
+    width: 100%;
 }
-/* .board {
+.board {
     display: flex;
-} */
+    /* background-color: red; */
+    width: 100%;
+    padding-left: 2%;
+}
 .game_info_bar {
     position: absolute;
     right: 1%;
@@ -33,4 +37,5 @@
     background-color: rgb(133, 203, 28);
     transition: 150ms all ease-in-out;
 }
+
 

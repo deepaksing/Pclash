@@ -56,6 +56,7 @@
     image-rendering: -moz-crisp-edges;
     image-rendering: pixelated;
     cursor: grab;
+    transition: 50ms transform ease-in-out;
 }
 
 .card1 {
@@ -76,7 +77,6 @@
     transform: 500ms translateY() ease;
     transform: 500ms scale() ease;
     z-index: 1001;
-
 }
 
 .card_mana_required {

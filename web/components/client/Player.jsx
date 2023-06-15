@@ -19,7 +19,11 @@ const Player = ({ hand, state, playerMana }) => {
             hand.map((hand, index) => {
               let cardClassname = `card card${index}`;
               // cardClassname = {state?.player.currentMana && hand.cost<=state?.player.currentMana};
-              if (state && hand.cost <= state.player.currentMana + 1)
+              if (
+                state &&
+                hand.cost <= state.player.currentMana &&
+                hand.position === "hand"
+              )
                 cardClassname = `card card${index} highlightCard`;
               return (
                 <div className={cardClassname} key={hand.id} data-id={hand.id}>

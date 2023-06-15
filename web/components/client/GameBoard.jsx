@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import "../../styles/gameboard.css";
+import PlayerCardBoard from "./PlayerCardBoard";
 
 const GameBoard = ({ playerTurn, changeTurn }) => {
   return (
     <>
       <div className="game_element">
         <div className="enemy_card_thrown"></div>
-        <div className="player_card_thrown board"></div>
+        <PlayerCardBoard />
         <div className="game_info_bar">
           {playerTurn ? (
             <div

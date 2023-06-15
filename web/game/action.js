@@ -6,10 +6,11 @@ export const createNewGame = () => {
     deck: [],
     drawPile: [],
     hand: [],
+    board: [],
     discardPile: [],
     player: {
       maxMana: 10,
-      currentMana: 0,
+      currentMana: 1,
       maxHealth: 29,
       currentHealth: 29,
     },
@@ -41,20 +42,18 @@ export const addStarterDeck = (state) => {
   return state;
 };
 
-export const drawCards = (state) => {
-  const newCards = state.drawPile.slice(0, 3);
-  const handCards = state.hand;
-  handCards.push(newCards);
-  state.hand = handCards;
+export const drawCards = (state, quantity) => {
+  if (state) {
+    const handCards = state.hand;
+    const newTemp = state.drawPile.slice(quantity, state.drawPile.length);
 
-  const newTemp = state.drawPile.slice(3, state.drawPile.length);
-  state.drawPile = newTemp;
+    for (let i = 0; i < quantity; i++) {
+      handCards.push(state.drawPile[i]);
+    }
 
-  return state;
+    state.hand = handCards;
+    state.drawPile = newTemp;
+
+    return state;
+  }
 };
-
-// function addCardToHand(state, { card }) {
-//   return produce(state, (draft) => {
-//     draft.hand.push(card);
-//   });
-// }

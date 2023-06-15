@@ -3,7 +3,7 @@ import { Draggable, gsap } from "gsap/all";
 gsap.registerPlugin(Draggable);
 
 function animateCardToHand(draggable) {
-  // console.log(draggable);
+  // console.log(draggable.target, draggable.startX, draggable.startY);
   return gsap.to(draggable.target, {
     x: draggable.startX,
     y: draggable.startY,
@@ -18,10 +18,15 @@ export const enabledragdrop = (state, playCard, selectCard) => {
 
   cards.forEach((card) => {
     const id = card.dataset.id;
-    const cardDetail = state.hand[0].filter((c) => id == c.id);
+    let cardDetail = state.hand.filter((c) => id == c.id);
+    let costReq = 100;
+    if (cardDetail.length === 0) {
+      cardDetail = state.board.filter((c) => c.id == id);
 
-    if (state.player.currentMana + 1 >= cardDetail[0].cost) {
-      console.log("yes");
+      if (cardDetail.length) costReq = 0;
+    } else costReq = cardDetail[0].cost;
+
+    if (state.player.currentMana >= costReq) {
       Draggable.create(card, {
         onDrag() {
           if (this.hitTest(board, "70%")) {
@@ -37,7 +42,7 @@ export const enabledragdrop = (state, playCard, selectCard) => {
 
           let boardHit = false;
           let targetHit = false;
-          if (this.hitTest(board, "70%")) boardHit = true;
+          if (this.hitTest(board, "10%")) boardHit = true;
 
           if (this.hitTest(target, "10%")) targetHit = true;
 
@@ -47,12 +52,15 @@ export const enabledragdrop = (state, playCard, selectCard) => {
             if (!targetHit) animateCardToHand(this);
           } else {
             const id = cardEl.dataset.id;
-            const cardDetail = state.hand[0].filter((c) => id == c.id);
-
+            let cardDetail = state.hand.filter((c) => id == c.id);
+            if (cardDetail.length === 0) {
+              cardDetail = state.board.filter((c) => c.id == id);
+            }
             const cardPos = cardDetail[0].position;
             if (cardPos === "hand") {
               selectCard(cardEl.dataset.id, cardEl);
               cardDetail[0].position = "board";
+              console.log(cardDetail);
             } else if (cardPos === "board") animateCardToHand(this);
           }
 
