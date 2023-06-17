@@ -1,27 +1,57 @@
 import { gsap } from "gsap";
 
 gsap.registerEffect({
+  name: "placeBoard",
+  effect: (targets, dropX, dropY) => {
+    // gsap.killTweensOf(targets);
+    gsap.set(targets, {
+      x: 2 * dropX,
+      y: 0,
+      scale: 1.5,
+      opacity: 0.8,
+    });
+    return gsap.to(targets, {
+      duration: 0.5,
+      scale: 1.5,
+      opacity: 0.8,
+      x: 0,
+      y: 10,
+    });
+  },
+});
+
+gsap.registerEffect({
+  name: "dealCards",
+  effect: (targets, config) => {
+    // gsap.killTweensOf(targets);
+    gsap.set(targets, {
+      x: 0,
+      y: 10,
+      scale: 1.5,
+      opacity: 0.8,
+    });
+    return gsap.to(targets, {
+      duration: 0.8,
+      // delay: 0.2,
+      scale: 1,
+      x: 0,
+      y: 0,
+      opacity: 1,
+      ease: "back.out(0.3)",
+    });
+  },
+});
+
+gsap.registerEffect({
   name: "playCard",
   effect: (targets, config) => {
-    const tl = gsap.timeline();
-    return tl
-      .to(targets, {
-        duration: 0.6,
-        y: "-=100",
-        rotation: 50,
-        scale: 0.8,
-        ease: "power3.out",
-        onComplete: config.onComplete,
-      })
-      .to(targets, {
-        delay: -0.3,
-        duration: 0.8,
-        scale: 0.5,
-        rotation: 90,
-        x: window.innerWidth,
-        y: window.innerHeight,
-        ease: "power3.inOut",
-      });
+    return gsap.to(targets, {
+      x: config.startX,
+      y: config.startY,
+      duration: 0.9,
+      delay: 0.2,
+      ease: "power3.out",
+    });
   },
 });
 

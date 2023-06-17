@@ -30,6 +30,8 @@ export class Card {
     this.turn = props.turn;
     this.position = CardPosition["hand"];
     // this.image = props.image;
+    this.x = null;
+    this.y = null;
   }
 }
 

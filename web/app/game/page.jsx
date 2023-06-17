@@ -28,36 +28,30 @@ const Game = () => {
   };
 
   //-----------------play the card to attack the enemy
-  const playcard = (id, cardEl) => {
+  const playcard = (id, cardEl, draggable) => {
     let usedCard = state.hand.filter((c) => id == c.id);
     if (usedCard.length === 0) {
       usedCard = state.board.filter((c) => c.id == id);
     }
 
     //reduce enemy health
-    gsap.effects.playCard(cardEl).then(() => {
+    gsap.effects.playCard(cardEl, draggable).then(() => {
       setenemyHealth(enemyHealth - usedCard[0].attack);
     });
   };
 
   //--------------select card by placing the card on the board
-  const selectCard = (id, cardEl) => {
+  const selectCard = (id, cardEl, draggable) => {
     const card = state.hand.filter((c) => id != c.id);
     const usedCard = state.hand.filter((c) => id == c.id);
     const manaUsed = usedCard[0].cost;
 
-    //remove card from hand
-    const clonedCard = cardEl.cloneNode(true);
-    clonedCard.class = "card";
-    const board = document.querySelector(".board");
-
-    board.appendChild(clonedCard);
-    clonedCard.style.transform = "none";
-    clonedCard.classList.remove("highlightCard");
-
+    //remove card from hand and add card to board
     // (##### IMPROVE: setstate part)
     let newState = state;
     let newBoard = newState.board;
+    usedCard[0].x = draggable.x;
+    usedCard[0].y = draggable.y;
     newBoard.push(usedCard[0]);
     newState.board = newBoard;
     newState.hand = card;
@@ -126,7 +120,11 @@ const Game = () => {
         <Enemy enemyHealth={enemyHealth} />
       </div>
 
-      <GameBoard playerTurn={playerTurn} changeTurn={changeTurn} />
+      <GameBoard
+        state={state}
+        playerTurn={playerTurn}
+        changeTurn={changeTurn}
+      />
 
       <div className="player">
         <Player hand={hand} state={state} playerMana={playerMana} />

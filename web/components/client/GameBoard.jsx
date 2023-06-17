@@ -2,12 +2,12 @@ import React, { useEffect, useState } from "react";
 import "../../styles/gameboard.css";
 import PlayerCardBoard from "./PlayerCardBoard";
 
-const GameBoard = ({ playerTurn, changeTurn }) => {
+const GameBoard = ({ state, playerTurn, changeTurn }) => {
   return (
     <>
       <div className="game_element">
         <div className="enemy_card_thrown"></div>
-        <PlayerCardBoard />
+        <PlayerCardBoard state={state} />
         <div className="game_info_bar">
           {playerTurn ? (
             <div

@@ -7,18 +7,21 @@
 .enemy_card_thrown {
     height: 45%;
     border-bottom: 2px dashed rgb(206, 165, 112);
+    position: relative;
 }
 
 .player_card_thrown {
     height: 55%;
     display: flex;
     width: 100%;
+    position: relative;
 }
 .board {
     display: flex;
-    /* background-color: red; */
     width: 100%;
     padding-left: 2%;
+    flex-direction: row;
+    position: relative;
 }
 .game_info_bar {
     position: absolute;
@@ -37,5 +40,50 @@
     background-color: rgb(133, 203, 28);
     transition: 150ms all ease-in-out;
 }
+
+.charachter_info {
+    height: 110px;
+    width: 110px;
+    margin-top: 30%;
+    margin-right: 40px;
+    position: relative;
+}
+.charachter_image {
+    background-color: grey;
+    width: 100%;
+    height: 100%;
+    border-top-left-radius: 100%;
+    border-top-right-radius: 100%;
+    position: relative;
+    border: 3px dashed black;
+}
+.charachter_attack {
+    position: absolute;
+    bottom: 0;
+    transform: translate(-50%, 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+.charachter_health {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    transform: translate(50%, 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
 
 
