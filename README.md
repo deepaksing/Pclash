@@ -18,7 +18,7 @@ Pclash is an exciting online game where players can buy, sell, and level up thei
 - Graphql
 - Solidity
 
-## Features
+## Features (Implemented)
 
 - Basic game board
 - Health bar and mana bar UI
