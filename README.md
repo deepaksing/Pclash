@@ -20,25 +20,25 @@ Pclash is an exciting online game where players can buy, sell, and level up thei
 
 ## Features (Implemented)
 
-- Basic game board
-- Health bar and mana bar UI
-- Card UI
-- Animations for interacting with cards
-- Dragging cards and placing them on the board or attacking the enemy hero
+✅ Basic game board
+✅ Health bar and mana bar UI
+✅ Card UI
+✅ Animations for interacting with cards
+✅ Dragging cards and placing them on the board or attacking the enemy hero
 
 ## Work in Progress
 
-- Implementing card abilities
-- Allowing players to attack enemy cards and heroes
-- Addressing edge cases
-- Improving animations
-- Enhancing the game's visuals
+⚙️ Implementing card abilities
+⚙️ Allowing players to attack enemy cards and heroes
+⚙️ Addressing edge cases
+⚙️ Improving animations
+⚙️ Enhancing the game's visuals
 
 ## Future Plans
 
-- Developing a proper backend for managing game data
-- Implementing a multiplayer experience
-- Utilizing Solidity to create smart contracts
+📅 Developing a proper backend for managing game data
+📅 Implementing a multiplayer experience
+📅 Utilizing Solidity to create smart contracts
 
 ## Installation
 
