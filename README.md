@@ -4,7 +4,7 @@
 
 # Pclash
 
-Pclash is an online blockchain strategy card game built with Next.js and Tailwind CSS.
+Pclash is an online blockchain strategy card game built with Next.js, Tailwind CSS, Golang and Solidity.
 
 ## Description
 
