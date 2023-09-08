@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="project-banner.png" alt="Pclash Banner">
+<!--   <img src="project-banner.png" alt="Pclash Banner"> -->
 </p>
 
 # Pclash
